@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Alexandria', 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #070d1e;
+    color: #f1f5f9;
+  }
+}
+
+/* Custom radial glows and circular utilities */
+.glow-cyan-sm {
+  box-shadow: 0 0 15px -3px rgba(6, 182, 212, 0.45);
+}
+
+.glow-cyan-lg {
+  box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.55);
+}
+
+.glow-orange-sm {
+  box-shadow: 0 0 15px -3px rgba(249, 115, 22, 0.45);
+}
+
+.glow-orange-lg {
+  box-shadow: 0 0 35px -5px rgba(249, 115, 22, 0.55);
+}
+
+.circular-flow-gradient {
+  background: radial-gradient(circle at center, rgba(14, 165, 233, 0.12) 0%, rgba(10, 25, 47, 0) 70%);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.25);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.5);
+}
+
+@keyframes circular-radar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar {
+  animation: circular-radar 6s linear infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
